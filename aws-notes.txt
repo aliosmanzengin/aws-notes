@@ -1,0 +1,84 @@
+AWS
+
+IAM (Identity and Access Management)
+* it is a global service.
+* Users are people within your organization, and can be grouped
+* Groups only contain users, not other groups
+* Users don’t have to belong to a group, and user can belong to multiple groups
+* A user can belong to a multiple gorups
+* Users or Groups can be assigned JSON document called policies
+* In AWS, you apply the least privilege principle: don’t give more permissions than a user needs
+ali-P4ssw0rd!
+
+commands:
+* aws iam list-users
+
+Shared Responsibility Model for IAM
+AWS:
+* Infrastructure (Global network security)
+* Configuration and vulnerability analysis
+* Compliance validation
+Customer:
+* Users, Groups, Roles, Policies management and monitoring
+* Enable MFA on all accounts
+* Rotate all your keys often
+* Use IAM tools to apply appropriate permissions
+* Analyze access patterns & review permissons
+
+IAM Summary:
+* Users: mapped to a physical user, has a password for AWS Console
+* Groups: contains users only
+* Policies: JSON document that outlines permissions for users or groups
+* Roles: for EC2 instances or AWS services
+* Security: MFA + Password Policy
+* AWS CLI: manage your AWS services using the command-line interface
+* AWS SDK: manage you AWS services using a programming language
+* Access Keys: access AWS using CLI or SDK 
+* Audit: IAM Credential Reports & IAM Access Advisor
+
+EC2 - Elastic Compute Cloud
+* EC2 = Infrastructure as a Service
+* It mainly consists in the capability of:
+    * Renting virtual machines (EC2)
+    * Storing data on virtual drives (EBS)
+    * Distributing load accross machines (ELB)
+    * Scaling the services using an auto-scaling group (ASG)
+
+* Some of the EC2 sizing and configuration options:
+    * Operating system
+    * How much Compute power & cores (CPU)
+    * How much RAM
+    * How much storage space
+        * network-attached (EBS & EFS)
+        * hardware (EC2 Instance Store)
+    * Network card: speed of the card, Public IP Address
+    * Firewall Rules: security group
+    * Bootstrap Script (Configure at first launch): EC2 User Data (Bootstrapping means launching commands when a machine starts). That script is only run once at the instance (first start)
+
+EC2 User Data
+* It is possible to bootstrap our instances using an EC2 User data script.
+* EC2 User data is used to automate boot tasks such as:
+    * Installin updates
+    * Installing software
+    * Downloading common files
+    * Anything you can think of..
+* EX2 User Data Script runs with the root user (any command you have will have the pseudo rights
+
+EC2 instance types:
+- General Purpose —> great for diversity of workloads such as web servers or code repositories. balance between; Compute, Memory, Networking
+- Compute Optimized —> Greate for compute-intensive tasks that require high performance processors (Media transcoding, batch processing workloads, high performance web servers, dedicated gaming servers)
+- Memory Optimized —> Fast performance for workloads that process large data sets in memory  
+
+
+
+
+- [x] 1- IAM
+- [ ] 2- EC2 - Elastic Compute Cloud
+- [ ] 3- EC2 Instance Storage
+- [ ] 4- ELB & ASG - Elastic Load Balancing & Auto Scaling Groups
+- [ ] 5- Amazon S3
+- [ ] 6- Databases & Analytics
+- [ ] 7- Other Compute services: ECS, Lambda, Batch, Lightsail
+- [ ] 8- Deployments & Managing Infrastructure at Scale
+- [ ] 9- Leveraging the AWS Global Infrastructure
+- [ ] 
